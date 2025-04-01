@@ -13,10 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Arquivos de Origem\NeuralImplements">
+      <UniqueIdentifier>{1cab6b12-b0ca-4b6c-86a6-4502b9000f61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\NeuralStruct">
+      <UniqueIdentifier>{7c68f2b2-716e-4be3-8011-244b33e24040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\NeuralUtils">
+      <UniqueIdentifier>{6b9a8144-9a7e-47e7-8319-e3668ec532ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PureMath-AI.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Convolve.cpp">
+      <Filter>Arquivos de Origem\NeuralImplements</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NeuralStruct.h">
+      <Filter>Arquivos de Origem\NeuralStruct</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralUtils.h">
+      <Filter>Arquivos de Origem\NeuralUtils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
