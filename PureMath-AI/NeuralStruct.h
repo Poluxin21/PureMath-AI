@@ -10,10 +10,10 @@ public:
     std::vector<std::vector<double>> weights_input_hidden, weights_hidden_output;
     std::vector<double> bias_hidden, bias_output;
     NeuralUtils utils;
-
     virtual void forward(IAStruct& net);
     virtual void backpropagate(IAStruct& net, double learning_rate);
     virtual ~IAStruct() {}
+    void useNeuron(bool MLP, bool CNN);
 
 protected:
     double sigmoid(double x);

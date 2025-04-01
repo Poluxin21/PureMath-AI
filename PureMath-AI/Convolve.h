@@ -11,6 +11,7 @@ public:
     void backpropagate(IAStruct& net, double learning_rate) override;
     void initialize(int input_size, int hidden_size, int output_size);
     int filter_size = 3;
+    void useNeuron(bool MLP, bool CNN);
 
 private:
     std::vector<std::vector<double>> filters;
