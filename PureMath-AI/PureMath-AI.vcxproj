@@ -133,6 +133,8 @@
     <ClCompile Include="PureMath-AI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Convolve.h" />
+    <ClInclude Include="NeuralBase.h" />
     <ClInclude Include="NeuralUtils.h" />
     <ClInclude Include="NeuralStruct.h" />
   </ItemGroup>

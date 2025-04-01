@@ -1,29 +1,24 @@
-#include <iostream>
+#ifndef NEURALSTRUCT_H
+#define NEURALSTRUCT_H
+
 #include <vector>
-#include <cmath>
 #include "NeuralUtils.h"
-class IAStruct
-{
+
+class IAStruct {
 public:
-    std::vector<double> input = std::vector<double>(4);
-    std::vector<double> hidden = std::vector<double>(16);
-    std::vector<double> output = std::vector<double>(4);
+    std::vector<double> input, hidden, output, expected_output;
+    std::vector<std::vector<double>> weights_input_hidden, weights_hidden_output;
+    std::vector<double> bias_hidden, bias_output;
+    NeuralUtils utils;
 
-    std::vector<std::vector<double>> weights_input_hidden = std::vector<std::vector<double>>(4, std::vector<double>(16));
-    std::vector<std::vector<double>> weights_hidden_output = std::vector<std::vector<double>>(16, std::vector<double>(4));
+    virtual void forward(IAStruct& net);
+    virtual void backpropagate(IAStruct& net, double learning_rate);
+    virtual ~IAStruct() {}
 
-    std::vector<double> bias_hidden = std::vector<double>(16);
-    std::vector<double> bias_output = std::vector<double>(4);
-
-    std::vector<double> expected_output = std::vector<double>(4);
-
+protected:
     double sigmoid(double x);
     double sigmoid_derivative(double x);
     void activate(std::vector<double>& neurons);
-    void forward(IAStruct& net);
-    void backpropagate(IAStruct& net, double learning_rate);
-
-
-private:
-    NeuralUtils utils;
 };
+
+#endif
