@@ -31,14 +31,21 @@ double NeuralUtils::meanSquaredError(const std::vector<double>& output, const st
 }
 
 std::vector<double> NeuralUtils::multiply(std::vector<double>& neurons, std::vector<std::vector<double>>& weights, std::vector<double>& bias) {
+    int neurons_size = neurons.size();
     int neurons_next_layer = weights[0].size();
+
+    if (weights.size() != neurons_size) {
+        throw std::runtime_error("Erro: Tamanho da matriz de pesos incompatível com os neurônios.");
+    }
+
     std::vector<double> result(neurons_next_layer, 0.0);
 
     for (int j = 0; j < neurons_next_layer; j++) {
-        for (int i = 0; i < neurons.size(); i++) {
+        for (int i = 0; i < neurons_size; i++) {
             result[j] += neurons[i] * weights[i][j];
         }
         result[j] += bias[j];
     }
+
     return result;
 }
